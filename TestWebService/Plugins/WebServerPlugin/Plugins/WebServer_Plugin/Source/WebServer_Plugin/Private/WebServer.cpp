@@ -13,7 +13,7 @@ void AWebServer::EndPlay(EEndPlayReason::Type EndPlayReason)
 void AWebServer::StartServer()
 {
 	UE_LOG(LogTemp, Warning, TEXT("WebServer::StartServer"));
-	FIPv4Endpoint Endpoint(FIPv4Address(0,0,0,0), 8521);
+	FIPv4Endpoint Endpoint(FIPv4Address(0,0,0,0), 9854);
 	FString SocketName = "localhost";
 	ListenerSocket = FTcpSocketBuilder(*SocketName)
 		.AsReusable()
