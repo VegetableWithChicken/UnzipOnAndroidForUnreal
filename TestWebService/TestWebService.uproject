@@ -1,0 +1,33 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "4.27",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "TestWebService",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "HTTPServer",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "WebView",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/5f600d5e8ddc46cd9711942375d4e2c7"
+		},
+		{
+			"Name": "WebServer_Plugin",
+			"Enabled": true
+		},
+		{
+			"Name": "FileDownloader",
+			"Enabled": true
+		}
+	]
+}

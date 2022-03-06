@@ -1,0 +1,41 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "WebView",
+	"Description": "Efficient UE browser uses CEF open source kernel; When the frame rate is 60 per second and the resolution is 4K, a single GPU is rendered, and the UE and browser will not lose frames. 8K frame rate does not decrease under multi GPU binding.",
+	"Category": "Other",
+	"CreatedBy": "aSurgingRiver",
+	"CreatedByURL": "https://github.com/aSurgingRiver",
+	"DocsURL": "https://raw.githubusercontent.com/aSurgingRiver/WebView/main/WebView%20Plug%20in%20description%20.docx",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/5f600d5e8ddc46cd9711942375d4e2c7",
+	"SupportURL": "https://github.com/aSurgingRiver",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": true,
+	"EnabledByDefault": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "CefBrowser",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "WebView",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "JsonLibrary",
+			"Enabled": false
+		}
+	]
+}

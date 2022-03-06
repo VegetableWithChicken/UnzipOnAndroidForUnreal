@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-FileDownloader.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Epic_Project\testproject\TestWebService\Intermediate\Build\Win64\TestWebServiceEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"E:\Epic_Project\testproject\TestWebService\Plugins\FileDownloader\Intermediate\Build\Win64\UE4Editor\Development\FileDownloader\FileDownloadManager.cpp.obj"
+"E:\Epic_Project\testproject\TestWebService\Plugins\FileDownloader\Intermediate\Build\Win64\UE4Editor\Development\FileDownloader\Module.FileDownloader.cpp.obj"
+"E:\Epic_Project\testproject\TestWebService\Plugins\FileDownloader\Intermediate\Build\Win64\UE4Editor\Development\FileDownloader\Module.FileDownloader.gen.cpp.obj"
+"E:\Epic_Project\testproject\TestWebService\Plugins\FileDownloader\Intermediate\Build\Win64\UE4Editor\Development\FileDownloader\Default.rc2.res"
+/OUT:"E:\Epic_Project\testproject\TestWebService\Plugins\FileDownloader\Intermediate\Build\Win64\UE4Editor\Development\FileDownloader\UE4Editor-FileDownloader.lib"

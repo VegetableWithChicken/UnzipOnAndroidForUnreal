@@ -1,0 +1,18 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.FileDownloader.cpp.obj": [
+			"DownloadEvent.cpp.obj",
+			"DownloadTask.cpp.obj",
+			"FileDownloader.cpp.obj",
+			"TaskInformation.cpp.obj",
+			"FileDownloadManager.cpp.obj"
+		],
+		"Module.FileDownloader.gen.cpp.obj": [
+			"DownloadEvent.gen.cpp.obj",
+			"FileDownloader.init.gen.cpp.obj",
+			"FileDownloadManager.gen.cpp.obj",
+			"TaskInformation.gen.cpp.obj"
+		]
+	}
+}

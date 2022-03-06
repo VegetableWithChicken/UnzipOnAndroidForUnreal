@@ -1,0 +1,14 @@
+TestWebService/.vs/
+TestWebService/Intermediate/
+TestWebService/Saved/
+TestWebService/TestWebService.sln
+TestWebService/Plugins/WebView/Intermediate/
+TestWebService/Plugins/WebView/Binaries/
+TestWebService/Plugins/UsefulBluePrintLibrary/Intermediate/
+TestWebService/Plugins/UsefulBluePrintLibrary/Binaries/
+TestWebService/Binaries/
+TestWebService/Plugins/VaRest/Intermediate/
+TestWebService/Plugins/WebServerPlugin/Intermediate/
+TestWebService/Plugins/WebServerPlugin/Binaries/
+TestWebService/Build/
+TestWebService/DerivedDataCache

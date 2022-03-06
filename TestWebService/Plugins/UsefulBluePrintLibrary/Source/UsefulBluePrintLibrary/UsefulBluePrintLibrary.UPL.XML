@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--LogicCore additions-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- 初始化-->
+    <trace enable="true"/>
+  <!--  应用于AndroidManifest.xml的可选更新 -->
+  <androidManifestUpdates>
+    <user-sdk android:targetSdkVersion="14"/>
+    
+  </androidManifestUpdates>
+  <!-- GameActivity.java中的GameActivity导入的可选添加内容 -->
+  <gameActivityImportAdditions>
+    <insert>
+      import android.util.Log;
+      import java.io.File;
+      import java.io.*;
+      import java.util.zip.*;
+    </insert>
+  </gameActivityImportAdditions>
+
+  
+   <gameActivityClassAdditions>
+     <insert>
+<![CDATA[
+       public  void AndroidThunkJava_zip(String zipFile, String[] files){
+       try {
+       BufferedInputStream origin = null;
+       ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(zipFile)));
+       try {
+       int BUFFER_SIZE = 512;
+       byte data[] = new byte[BUFFER_SIZE];
+       for (int i = 0;i  < files.length; i++) {
+                FileInputStream fi = new FileInputStream(files[i]);
+                origin = new BufferedInputStream(fi, BUFFER_SIZE);
+                try {
+                    ZipEntry entry = new ZipEntry(files[i].substring(files[i].lastIndexOf("/") + 1));
+                    out.putNextEntry(entry);
+                    int count;
+                    while ((count = origin.read(data, 0, BUFFER_SIZE)) != -1) {
+                        out.write(data, 0, count);
+                    }
+                }
+                finally {
+                    origin.close();
+                }
+            }
+        }
+        finally {
+            out.close();
+        }
+        }
+        catch (Exception e) {
+           
+        }
+    }
+    
+    public void AndroidThunkJava_GetMessage(){
+      System.out.println("Java JNI Worked !");
+    }
+
+    public void AndroidThunkJava_unzip(String zipFile, String location) {
+       System.out.println("AndroidThunkJava_unzip !");
+        int size;
+        int BUFFER_SIZE = 512;
+        byte[] buffer = new byte[BUFFER_SIZE];
+
+        try {
+            if ( !location.endsWith("/") ) {
+                location += "/";
+            }
+            File f = new File(location);
+            if(!f.isDirectory()) {
+                f.mkdirs();
+                System.out.println("File f = new File(location)");
+            }
+            ZipInputStream zin = new ZipInputStream(new BufferedInputStream(new FileInputStream(zipFile), BUFFER_SIZE));
+            System.out.println("ZipInputStream");
+            try {
+                ZipEntry ze = null;
+                System.out.println("new ZipInputStream");
+                while ((ze = zin.getNextEntry()) != null) {
+                    String path = location + ze.getName();
+                    File unzipFile = new File(path);
+
+                    if (ze.isDirectory()) {
+                        if(!unzipFile.isDirectory()) {
+                            unzipFile.mkdirs();
+                            System.out.println("unzipFile.mkdirs !");
+                        }
+                    } else {
+                        
+                        File parentDir = unzipFile.getParentFile();
+                        if ( null != parentDir ) {
+                            if ( !parentDir.isDirectory() ) {
+                                parentDir.mkdirs();
+                            }
+                        }
+                     System.out.println("FileOutputStream !");
+                        FileOutputStream out = new FileOutputStream(unzipFile, false);
+                        BufferedOutputStream fout = new BufferedOutputStream(out, BUFFER_SIZE);
+                        try {
+                            while ( (size = zin.read(buffer, 0, BUFFER_SIZE)) != -1 ) {
+                                fout.write(buffer, 0, size);
+                                System.out.println(" fout.write!");
+                            }
+
+                            zin.closeEntry();
+                        }
+                        finally {
+                            fout.flush();
+                            fout.close();
+                        }
+                    }
+                }
+            }
+            finally {
+            System.out.println(" zin.close() ");
+                zin.close();
+            }
+        }
+        catch (Exception e) {
+            System.out.println(" catch (Exception e) ," + e.getMessage());
+        }
+    }
+]]>
+     </insert>
+   </gameActivityClassAdditions>
+  
+
+
+</root>
